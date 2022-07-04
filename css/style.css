@@ -1,0 +1,217 @@
+@charset "utf-8";
+
+/*===================================
+/*初期設定
+===================================*/
+body{
+	background-color:#ebebeb;
+	color:#000;
+  font-size: 1rem;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	font-stretch:expanded;
+	margin:0;
+}
+h1,h2,h3,p,figure{
+	margin: 0;
+}
+p{
+	margin: 5vh 0;
+	line-height: 1.85;
+}
+header{
+  width:100%;
+  height: 100vh;
+  position: relative;
+}
+.fluid{
+  top: 20%;
+  left: 15%;
+  position:fixed;
+  width:50vh;
+  height: 50vh;
+  background:#fafafa;
+  border-radius: 34% 66% 45% 55% / 68% 56% 44% 32%;
+}
+.fluid img{
+  width: 35vh;
+}
+h1{
+  position: fixed;
+  top: 25%;
+  right: 20%;
+	font-size:4em;
+	margin:0;
+	text-align:center;
+}
+.cmnt{
+  position: fixed;
+  top: 35%;
+  right: 20%;
+}
+header p{
+	text-align:center;
+}
+.bottom{
+  display: block;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  margin: 0 auto;
+}
+/* 矢印 */
+.arrow{
+  position: relative;
+}
+.arrow::before {
+  content: "";
+  margin: auto;
+  position: absolute;
+  left: 35%;
+  width: 13px;
+  height: 13px;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  transform: rotate(45deg);    /* < の向き */
+}
+/* 矢印　ここまで */
+
+#container{
+  position: relative;
+  z-index:1;
+  background: linear-gradient(#fff 90%, #ebebeb);
+  border-radius: 5em 0 0 0;
+  padding: 15vh 10vw;
+}
+
+/* アニメーション下から現れる */
+.fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+@keyframes fadeUpAnime{
+  from {
+  opacity: 0;
+  transform: translateY(500px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+}
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.fadeUpTrigger{
+  opacity: 0;
+}
+/* アニメーション下から現れる　ここまで */
+
+h2{
+	font-size:3em;
+  border-bottom: #000 3px solid;
+}
+
+/* リストに戻るボタン */
+.backlist{
+  position: fixed;
+  bottom: 2rem;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  display: none;
+}
+.backlist a{
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  height: 100px;
+  width: 200px;
+}
+.arrowup{
+  margin-bottom: -20px ;
+}
+.arrowup::before {
+  content: "";
+  margin: auto;
+  position: absolute;
+  left: 35%;
+  width: 13px;
+  height: 13px;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  transform: rotate(-135deg);    /* < の向き */
+}
+
+
+.panel{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 10px;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+h3{
+  font-size: 2em;
+}
+.detail{
+  display: flex;
+  margin-bottom: 10vh;
+}
+.detail img{
+  width: 40vw;
+}
+.rSide{
+  margin-left: 5vw;
+}
+
+footer{
+background-color:#ebebeb;
+width:100%;
+height: 100vh;
+position: relative;
+text-align: center;
+}
+.pdng{
+  padding: 20vh 0;
+  margin: 0;
+}
+.btn{
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 100px;
+}
+.flexH{
+  display: flex;
+  justify-content: space-evenly;
+}
+.neumorphism{
+  border-radius: 30px;
+  background: linear-gradient(145deg, #fbfbfb, #d4d4d4);
+  box-shadow:  12px 12px 24px #c8c8c8, -12px -12px 24px #ffffff;
+}
+.neumorphism:hover{
+  border-radius: 30px;
+  background: #ebebeb;
+  box-shadow: inset 12px 12px 24px #c8c8c8, inset -12px -12px 24px #ffffff;
+}
+
+/* モバイル */
+@media screen and (max-width:1000px) {
+  .detail{
+    display: block;
+  }
+  .detail img{
+    width: 80vw;
+  }
+  h1, .cmnt{
+    left: 15%;
+  }
+}
