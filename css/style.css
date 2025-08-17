@@ -3,55 +3,60 @@
 /*===================================
 /*初期設定
 ===================================*/
-body{
-	background-color:#ebebeb;
-	color:#000;
+body {
+  background-color: #ebebeb;
+  color: #000;
   font-size: 1rem;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
-	font-stretch:expanded;
-	margin:0;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
+  font-stretch: expanded;
+  margin: 0;
 }
-h1,h2,h3,p,figure{
-	margin: 0;
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
 }
-p{
-	margin: 5vh 0;
-	line-height: 1.85;
+p {
+  margin: 5vh 0;
+  line-height: 1.85;
 }
-header{
-  width:100%;
+header {
+  width: 100%;
   height: 100vh;
   position: relative;
 }
-.fluid{
+.fluid {
   top: 20%;
   left: 15%;
-  position:fixed;
-  width:50vh;
+  position: fixed;
+  width: 50vh;
   height: 50vh;
-  background:#fafafa;
+  background: #fafafa;
   border-radius: 34% 66% 45% 55% / 68% 56% 44% 32%;
 }
-.fluid img{
+.fluid img {
   width: 35vh;
 }
-h1{
+h1 {
   position: fixed;
   top: 25%;
   right: 20%;
-	font-size:4em;
-	margin:0;
-	text-align:center;
+  font-size: 4em;
+  margin: 0;
+  text-align: center;
 }
-.cmnt{
+.cmnt {
   position: fixed;
   top: 35%;
   right: 20%;
 }
-header p{
-	text-align:center;
+header p {
+  text-align: center;
 }
-.bottom{
+.bottom {
   display: block;
   position: fixed;
   bottom: 5%;
@@ -59,7 +64,7 @@ header p{
   margin: 0 auto;
 }
 /* 矢印 */
-.arrow{
+.arrow {
   position: relative;
 }
 .arrow::before {
@@ -71,48 +76,48 @@ header p{
   height: 13px;
   border-right: 3px solid #000;
   border-bottom: 3px solid #000;
-  transform: rotate(45deg);    /* < の向き */
+  transform: rotate(45deg); /* < の向き */
 }
 /* 矢印　ここまで */
 
-#container{
+#container {
   position: relative;
-  z-index:1;
+  z-index: 1;
   background: linear-gradient(#fff 90%, #ebebeb);
   border-radius: 5em 0 0 0;
   padding: 15vh 10vw;
 }
 
 /* アニメーション下から現れる */
-.fadeUp{
-  animation-name:fadeUpAnime;
-  animation-duration:0.5s;
-  animation-fill-mode:forwards;
-  opacity:0;
-}
-@keyframes fadeUpAnime{
-  from {
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
   opacity: 0;
-  transform: translateY(500px);
+}
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(500px);
   }
   to {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
-.fadeUpTrigger{
+.fadeUpTrigger {
   opacity: 0;
 }
 /* アニメーション下から現れる　ここまで */
 
-h2{
-	font-size:3em;
+h2 {
+  font-size: 3em;
   border-bottom: #000 3px solid;
 }
 
 /* リストに戻るボタン */
-.backlist{
+.backlist {
   position: fixed;
   bottom: 2rem;
   right: 0;
@@ -120,7 +125,7 @@ h2{
   z-index: 10;
   display: none;
 }
-.backlist a{
+.backlist a {
   color: #000;
   background-color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
@@ -130,8 +135,8 @@ h2{
   height: 100px;
   width: 200px;
 }
-.arrowup{
-  margin-bottom: -20px ;
+.arrowup {
+  margin-bottom: -20px;
 }
 .arrowup::before {
   content: "";
@@ -142,43 +147,48 @@ h2{
   height: 13px;
   border-right: 3px solid #000;
   border-bottom: 3px solid #000;
-  transform: rotate(-135deg);    /* < の向き */
+  transform: rotate(-135deg); /* < の向き */
 }
 
-
-.panel{
+.panel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 10px;
   text-align: center;
   margin-bottom: 10vh;
 }
-h3{
+.panel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+h3 {
   font-size: 2em;
 }
-.detail{
+.detail {
   display: flex;
   margin-bottom: 10vh;
 }
-.detail img{
+.detail img {
   width: 40vw;
 }
-.rSide{
+.rSide {
   margin-left: 5vw;
 }
 
-footer{
-background-color:#ebebeb;
-width:100%;
-height: 100vh;
-position: relative;
-text-align: center;
+footer {
+  background-color: #ebebeb;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  text-align: center;
 }
-.pdng{
+.pdng {
   padding: 20vh 0;
   margin: 0;
 }
-.btn{
+.btn {
   text-decoration: none;
   color: #000;
   display: inline-block;
@@ -188,30 +198,31 @@ text-align: center;
   text-align: center;
   line-height: 100px;
 }
-.flexH{
+.flexH {
   display: flex;
   justify-content: space-evenly;
 }
-.neumorphism{
+.neumorphism {
   border-radius: 30px;
   background: linear-gradient(145deg, #fbfbfb, #d4d4d4);
-  box-shadow:  12px 12px 24px #c8c8c8, -12px -12px 24px #ffffff;
+  box-shadow: 12px 12px 24px #c8c8c8, -12px -12px 24px #ffffff;
 }
-.neumorphism:hover{
+.neumorphism:hover {
   border-radius: 30px;
   background: #ebebeb;
   box-shadow: inset 12px 12px 24px #c8c8c8, inset -12px -12px 24px #ffffff;
 }
 
 /* モバイル */
-@media screen and (max-width:1000px) {
-  .detail{
+@media screen and (max-width: 1000px) {
+  .detail {
     display: block;
   }
-  .detail img{
+  .detail img {
     width: 80vw;
   }
-  h1, .cmnt{
+  h1,
+  .cmnt {
     left: 15%;
   }
 }
