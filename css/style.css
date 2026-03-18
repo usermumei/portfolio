@@ -7,7 +7,8 @@ body {
   background-color: #ebebeb;
   color: #000;
   font-size: 1rem;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+  font-family:
+    "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
     "游ゴシック", "Yu Gothic", sans-serif;
   font-stretch: expanded;
   margin: 0;
@@ -27,8 +28,9 @@ header {
   width: 100%;
   height: 100vh;
   position: relative;
+  color: #fff;
 }
-.fluid {
+/* .fluid {
   top: 20%;
   left: 15%;
   position: fixed;
@@ -39,7 +41,7 @@ header {
 }
 .fluid img {
   width: 35vh;
-}
+} */
 h1 {
   position: fixed;
   top: 25%;
@@ -63,6 +65,15 @@ header p {
   left: 50%;
   margin: 0 auto;
 }
+summary {
+  color: #00f;
+}
+figcaption {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
 /* 矢印 */
 .arrow {
   position: relative;
@@ -74,13 +85,138 @@ header p {
   left: 35%;
   width: 13px;
   height: 13px;
-  border-right: 3px solid #000;
-  border-bottom: 3px solid #000;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
   transform: rotate(45deg); /* < の向き */
 }
 /* 矢印　ここまで */
 
-#container {
+/* topのスライドショー st */
+.img-frame {
+  position: relative;
+  /* min-width: 110vh; */
+  min-height: 120vh;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.portfolio {
+  /* font-size: 20px; */
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 重なり順を指定*/
+  z-index: 1;
+}
+/* 半透明矩形 */
+.img-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.blur {
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+@media screen and (max-width: 767px) {
+  .img-frame {
+    width: 100%;
+    height: 200px;
+  }
+  .img-01,
+  .img-02,
+  .img-03 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .img-01 {
+    background-image: url("../img/01wb103_momo.jpg");
+    animation: slide-animation-01 24s infinite;
+  }
+  .img-02 {
+    background-image: url("../img/01wb101_momo.jpg");
+    animation: slide-animation-02 24s infinite;
+  }
+  .img-03 {
+    background-image: url("../img/01wb201_momo.jpg");
+    animation: slide-animation-03 24s infinite;
+  }
+}
+@keyframes slide-animation-01 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slide-animation-02 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-animation-03 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+/* topのスライドショー ed */
+
+#container,
+#container2 {
   position: relative;
   z-index: 1;
   background: linear-gradient(#fff 90%, #ebebeb);
@@ -152,14 +288,14 @@ h2 {
 
 .panel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(20vh, 1fr));
+  gap: 1vh;
   text-align: center;
   margin-bottom: 10vh;
 }
 .panel img {
-  width: 100%;
-  height: 200px;
+  width: 20vh;
+  height: 20vh;
   object-fit: cover;
 }
 
@@ -205,12 +341,16 @@ footer {
 .neumorphism {
   border-radius: 30px;
   background: linear-gradient(145deg, #fbfbfb, #d4d4d4);
-  box-shadow: 12px 12px 24px #c8c8c8, -12px -12px 24px #ffffff;
+  box-shadow:
+    12px 12px 24px #c8c8c8,
+    -12px -12px 24px #ffffff;
 }
 .neumorphism:hover {
   border-radius: 30px;
   background: #ebebeb;
-  box-shadow: inset 12px 12px 24px #c8c8c8, inset -12px -12px 24px #ffffff;
+  box-shadow:
+    inset 12px 12px 24px #c8c8c8,
+    inset -12px -12px 24px #ffffff;
 }
 
 /* モバイル */
